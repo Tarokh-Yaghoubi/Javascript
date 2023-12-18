@@ -195,5 +195,14 @@ workers.job = "C Developer";    // You can add a property
 
 console.log(workers);
 
+// const test = {username:"tarokh", password:"hashed", color:"white"};
+
+// let test2 = test;
+
+// test2.username = "amirali";
+
+// console.log(test);
+// console.log(test2);        // BIG ? 
+
 
 // You can change the properties of a constant object, but you can not reassign the object
