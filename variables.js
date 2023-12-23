@@ -7,13 +7,16 @@
  *      using let
  *      using const
  */
+
+"use strict";
+
 {
   const name = "tarokh";
   var familyName = "Jacobi";
   let firstName = "Harry";
   let sirName = "Potter";
 
-  x = 6;
+  let x = 6;
   console.log("Automatic X value is : ", x);
   console.log("firstname is ", name);
   console.log("other firstname is ", firstName);
@@ -206,3 +209,34 @@ console.log(workers);
 
 
 // You can change the properties of a constant object, but you can not reassign the object
+
+
+let message;    // declareds a variable 
+message = 'Hello Man, Nice Trying';
+console.log("The message content is :", message);
+
+var myusername = "tarokh.yaghoubi";
+var myusername = "tarokh.git";    // re-declaration is possible in using let 
+
+//  In languages such as Haskell, the languages forces us to create a new variable if we wanna use another one 
+// we can not use the same variable with a different value in Haskell 
+
+
+let asd = "carzz";
+console.log(asd);
+
+const userpass = "12345678";
+console.log(userpass[0]);
+
+let index = 0;
+let varValue = "";
+for (index = 0; index < userpass.length; ++index) {
+  if (userpass[index] != '7')
+      varValue += userpass[index];
+  else
+      break;
+}
+console.log("the length of userpass[index] copied in varVal is :", index);
+console.log("the value of varVal is :", varValue);
+let arr = [...userpass].filter(item=>item <= 6).join("");
+console.log(typeof arr);

@@ -72,23 +72,23 @@
  const cars = ["toyota", "Mercedes", "BMW"];
  cars[0] = "Jafar";
  cars.push("lexux");
- console.log(cars);
- 
+ console.log(cars); 
 
 
-const girls = {
-    firstName: "Hanane",
-    lastName: "Rezavandi",
-    boobs: 65,
+const boys = {
+    firstName: "Tony",
+    lastName: "Ferguson",
     height: 155,
     fullName: function() {
         return this.firstName + " " + this.lastName;
-    } 
+    }
 }
 
-let hanaFullname = girls.fullName();
+let hanaFullname = boys.fullName();
 console.log("the full name of the girl is :", hanaFullname);
-console.log(girls.fullName);
-
+console.log(boys.fullName);
 jesus = new String();
 console.log(typeof jesus);
+
+[1, 2, 3].forEach(console.log);
+
