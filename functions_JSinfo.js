@@ -1,0 +1,7 @@
+
+/**
+ * 
+ * 
+ *      javascript.info functions documentation
+ * 
+ */
