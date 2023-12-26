@@ -45,3 +45,18 @@ if (condition === 1) alert(`the condition value is ${condition}`);  // THIS IS A
 if (condition !== 1) {
     console.log("THIS IS THE BEST VARIANT 😃");
 }
+
+// INDENTS 
+
+// There are two types of indents 
+// Horizontal indents: 2 or 4 spaces
+// A horizontal indentation is made using either 2 or 4 spaces 
+// A Vertical indent, empty lines of for splitting code into logical blocks
+
+
+// avoid nesting code too many levels deep 
+
+// Most of the time, first the function is used, then the function declarations will be places at the end of the code 
+
+
+
