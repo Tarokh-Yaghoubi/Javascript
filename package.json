@@ -1,0 +1,23 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "My JavaScript git Repository, for learning how to code in JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarokh-Yaghoubi/Javascript.git"
+  },
+  "author": "Tarokh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tarokh-Yaghoubi/Javascript/issues"
+  },
+  "homepage": "https://github.com/Tarokh-Yaghoubi/Javascript#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
