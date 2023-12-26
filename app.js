@@ -1,7 +1,7 @@
-const toCelsius = require("../Javascript/functions")
+// const toCelsius = require("../Javascript/functions")
+const makeUser = require("../Javascript/Objects/objects_basics")
 
 
-let fahrenheit = 123;
-let answer = toCelsius(fahrenheit);
-
-console.log(`The answer of toCelsius in 123 Fahrenheit is ${answer}`);
+let user = new Object();
+user = makeUser("tarokh", 19, "brown");
+console.log(user);
