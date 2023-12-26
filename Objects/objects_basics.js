@@ -86,9 +86,51 @@ obj = {
 // obj.__proto__ = 5;
 
 obj.__proto__.data = 54;
+
+obj.__proto__.func = function() {
+    console.log(this.name);
+    console.log(this.age);
+    console.log("THis is from prototype");
+}
+
 console.log("------------------------");
 console.log(obj);
 console.log(obj.__proto__.data);
 
 console.log(obj[0]);
+
+// Property existence test, "in" operator
+
+let nObj = new Object();
+
+nObj = makeUser("tarokh", 19, "Brown");
+if ("age" in nObj) console.log("Exists");
+else console.log("Does not exists");
+
+
+let returnValue = "age" in nObj;
+if (returnValue) console.log(true);
+else console.log(false);
+
+
+// for-in loop in JS 
+
+
+console.log("----------------------");
+nObj.func();
+console.log("----------------------");
+for (key in nObj) {
+    if (typeof nObj[key] !== "function") {
+        console.log(nObj[key]);
+    }
+}
+
+let jesus = {
+    profitName: "JESUS"
+};
+
+console.log("----------------------");
+for (key in jesus) console.log(jesus[key]);
+console.log("----------------------");
+
 
