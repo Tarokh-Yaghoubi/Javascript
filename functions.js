@@ -2,6 +2,7 @@
 // Functions in JavaScript
 
 
+
 /**
  * 
  *      A JS function is a block of code designed to perform a particular task.
@@ -57,3 +58,5 @@ console.log("The tempreture is : " + toCelsius(77) + " Celsius");
 
 // Variables declared within a JS function , become LOCAL to the function 
 // Local variables can only be accessed from within the function 
+
+module.exports = toCelsius;
