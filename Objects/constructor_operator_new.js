@@ -198,6 +198,54 @@ newFullAdmin.LogOff(adminName);
 newFullAdmin1.LogOff("Harry");
 
 
+function System(hard=undefined, ram=undefined, cpu=undefined, gpu=undefined) {
+
+    if (!new.target) return new System(hard, ram, cpu, gpu);
+    else if (new.target) {
+
+        this.hard = String(hard);
+        this.ram = String(ram);
+        this.cpu = String(cpu);
+        this.gpu = String(gpu);
+
+       this.ShowBios = function() {
+
+             console.log("lack of system resources");
+        }
+
+        this.PowerOn = function(checkRam=false, checkCpu=false, checkHard=false) {
+            
+            let that = this;
+            
+            this.checkHard = checkHard;
+            this.checkRam = checkRam;
+            this.checkCpu = checkCpu;
+
+            if ((this.checkCpu || this.checkHard || this.checkRam) === true) {
+
+                if (that.hard !== "undefined" && that.ram !== "undefined" && that.cpu !== "undefined") {
+                    this.checkRam = this.checkCpu = this.checkHard = true;
+                    console.log(`RAM model: ${that.ram}, CPU model: ${that.cpu}, HARD model: ${that.hard}`);
+                } else {
+                    that.ShowBios();
+                }
+            } else {
+                console.log("hard and ram and cpu are all false and are not necessary for check");
+            }
+
+        }
+    }
+}
+
+console.log("-------------------------");
+
+let tarokhSystem = System("1TR M2", "AXTROM 32 GIG", "Ryzen 7 5700G", "4090 GigaByte");
+tarokhSystem.PowerOn(false, false, true);
+
+console.log("-------------------------");
+
+
+
 /**
  * 
  *      This approach 'new.target' is sometimes used in libraries to make the syntax more flexible. 
@@ -233,3 +281,16 @@ function BigUser() {
 }
 
 console.log(new BigUser().name);
+
+function SmallUser() {
+    this.name = "Harry";
+
+    return;
+}
+
+console.log(new SmallUser().name);
+
+
+// After using new we can ommit the () after the constructor name 
+// but this is not a good practice 
+
