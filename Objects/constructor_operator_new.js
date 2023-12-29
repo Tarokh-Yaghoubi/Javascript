@@ -293,4 +293,3 @@ console.log(new SmallUser().name);
 
 // After using new we can ommit the () after the constructor name 
 // but this is not a good practice 
-
