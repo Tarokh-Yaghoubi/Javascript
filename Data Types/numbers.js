@@ -57,5 +57,71 @@ let testFixed = 12.34;
 testFixed = testFixed.toFixed(1);
 console.log(testFixed);
 
-testFixed = testFixed.toFixed(5);   // this will add zeros to the number,
-console.log(testFixed);
+// testFixed = testFixed.toFixed(5);   // this will add zeros to the number,
+// console.log(testFixed);
+
+console.log(0 < Infinity);
+console.log(typeof Infinity);
+let convInfinity = Number(Infinity);
+console.log(convInfinity);
+
+console.log("---------------- ------------------");
+console.log(typeof NaN);
+console.log(isNaN(21));
+console.log(Number(NaN));
+console.log(NaN === NaN);       // NaN does not even equal itself !
+
+console.log("---------------- ------------------");
+console.log(isFinite("15"));
+console.log(isFinite("str"));           //  false, because a special value: NaN
+console.log(isFinite(Infinity));            // false, because a special value: Infinity
+
+
+console.log("---------------- ------------------");
+console.log(Number.isNaN(NaN));
+console.log(Number.isInteger("tarokh"));
+console.log(Number.isFinite(0));
+console.log(Number.isFinite("094231"));
+
+
+console.log("---------------- ------------------");
+console.log(Object.is(0, -0) === true);
+console.log(Object.is(1, "str") === true);
+console.log(Object.is(0, "0") === true);
+
+console.log(typeof "123");
+console.log(typeof (+"154"));
+
+let complexNum = "5000$";
+let number = parseInt(complexNum);
+console.log(`number is : ${number}`);
+// also we do have parseFloat
+
+console.log(parseInt("a154"));  // NaN; THE first symbol stops the process 
+
+/**
+ * 
+ *      parseInt() function also has an optional second parameter. It specifies the base of the numeral system,
+ *      so parseInt() can also parse strings of hex numbers, binary numbers and so on.
+ * 
+ */
+
+console.log(parseInt("01001111011", 2));
+
+// JS has a built-in Math object which contains a small library of mathematical functions and constants. 
+// a few examples:
+// Math.random();
+
+
+// returns a random number from 0 to 1, not including "1"
+console.log("-------------------- ----------------------");
+let i = 0;
+let randNum = 0;
+while (i != 9) {
+    randNum = Math.random();
+    console.log(`${i}: ${randNum}`);
+    ++i;
+}
+
+console.log(Math.max(-0, 0));
+console.log(Math.min(0, -0, 1, 15, 13, 154, 542));
