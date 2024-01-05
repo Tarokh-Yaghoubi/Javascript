@@ -57,3 +57,51 @@ console.log(copyByValue);
 console.log(anyTypeArray);
 copyByValue.at(-2)(9, 54, 6);
 
+let loopArrVar = '';
+let loopArr = [1, 2, 4, 6, 9, 8, 7, 3, 45, 65, 98, 154, 321];
+for (let index = 0; index < loopArr.length; ++index) loopArrVar += loopArr[index] + ' ';
+console.log(loopArrVar);
+
+let anotherLoopArrVar = '';
+let anotherLoopArr = ["tarokh", "Jerry", "Benzema", "Italy", "Mercedes", "{Happy Life}"];
+for (let char of anotherLoopArr) anotherLoopArrVar += char + ' ';
+console.log(anotherLoopArrVar);
+
+// it is also possible to use for...in because arrays are objects
+
+let anotherForInTypeArrVar = '';
+for (let char in anotherLoopArr) anotherForInTypeArrVar += anotherLoopArr[char] + ' ';
+console.log(`the same array logged using for..in loop : (( ${anotherForInTypeArrVar} ))`);
+// BTW, we should not use for...in for arrays. It is slow, and it will iterate in all the unnecessary properties as well
+
+/**
+ * 
+ *      The length property is writable, if we increase its value nothing will happen,
+ *      but if we decrease it, it will truncate the array
+ * 
+ */
+
+
+let testLengthProp = [1, 2, 3, 4, 5, 6, 7];
+testLengthProp.length = 3;
+console.log(testLengthProp);
+// testLengthProp.length = 10;          -> THIS WILL NOT WORK ANYMORE, THE VALUES ARE GONE !! 
+
+
+let nArr = new Array(3);    // this will create an array of length 3
+console.log(nArr[0]);   // undefined !! 
+console.log(nArr.length);       // this is now 3 :)
+
+// To avoid such surprises, we usually use square brackets, unless we really know what we’re doing.
+
+let matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+console.log(matrix[0][0]);
+
+arr = [1, 2, 3];
+console.log(String(arr) === '1,2,3');   // this will be true
+
