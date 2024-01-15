@@ -76,3 +76,28 @@ let [name4, name5, ...rest] = ["tarokh", "jimmy", "muhammad", "james", "kathrine
 console.log(name4);
 console.log(name5);
 console.log(rest.length);
+
+
+let myObject = {
+	FIRSTname: "tarokh",
+	SIRfamily: "Jacobs",
+	SIRage: 19
+};
+let FIRSTname, SIRfamily, SIRage;
+({ FIRSTname, SIRfamily, SIRage } = { myObject });
+
+console.log(FIRSTname, SIRfamily, SIRag);
+
+
+
+let options = {
+	title: "Menu",
+	height: 200,
+	width: 100
+};
+
+let {title, ...others} = options;
+console.log(title);
+console.log(others);
+
+
