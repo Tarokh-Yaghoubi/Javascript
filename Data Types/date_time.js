@@ -62,3 +62,51 @@ console.log(wrongDate);
 let new_date = new Date(2016, 1, 28);
 new_date.setDate(new_date.getDate() + 2);
 console.log(new_date);
+
+let diff_date = new Date();
+console.log(+diff_date);
+
+
+let start = new Date();
+
+for (let i = 0; i < 100000; i++) {
+    let dosomething = i * i * i;
+}
+
+let end = new Date();
+
+console.log(`The loop took ${end - start} ms`);
+
+
+start = Date.now();
+
+for (let i = 0; i <= 100000; i++) {
+    let doSomething = i * i * i;
+}
+
+end = Date.now();
+
+console.log(`The loop took ${end - start} ms`);
+
+
+function diffSubtract(date1, date2) {
+    return date2 - date1;
+}
+
+function diffGetTime(date1, date2) {
+    return date2.getTime() - date1.getTime();
+}
+
+
+function benchmark(func) {
+    let date1 = new Date(0);
+    let date2 = new Date();
+
+    let start = Date.now();
+
+    for (let i = 0; i < 100000; i++) func(date1, date2);
+    return Date.now() - start;
+}
+
+console.log(`Time of diffSubtract is ${benchmark(diffSubtract)} ms`);
+console.log(`Time of diffGetTime is ${benchmark(diffGetTime)} ms`);
