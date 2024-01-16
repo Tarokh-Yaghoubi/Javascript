@@ -192,4 +192,7 @@ console.log(me.raining);
 console.log(outside.raining);   // this would be false if outside.rainy() was not above 
 
 console.log("----------------- ----------------");
-for (let prop in me) if (prop == "raining") console.log(typeof prop, prop); else console.log(prop);
+for (let prop in me) if (me.hasOwnProperty(prop)) console.log(prop); else console.log(`Inherited property: ${prop}`);
+
+
+
