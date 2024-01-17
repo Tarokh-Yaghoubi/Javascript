@@ -54,3 +54,66 @@ showName("Tarokh", "Yaghoubi", "Karim Koorani", "sdjkfasjdflasbf");
 
 // note: The rest parameters must be at the end
 
+// The arguments variable 
+
+// There is a special array-like object named "arguments" that contains all arguments by there index
+
+function printName() {
+    if (arguments[0]) {
+        console.log(`name is : ${arguments[0]}`);
+    } else if (!arguments[0]) {
+
+        arguments[0] = "Tarokh";
+        console.log(`There is not argument specified, ${arguments[0]} by default`);
+    }
+}
+
+
+printName();
+printName("Mohammad");
+
+
+
+// arrow functions do now have the special arguments object 
+
+// spread syntax 
+
+// Imagine we have an array of numbers and we wanna use Math.max on it, but Math.max does not accept arrays, 
+// so we need to convert the array to the list of arguments, that is where the spread syntax comes to play.
+
+
+
+let arr = [54, 84, 65, 2, 3, 4, 69, 80];
+// Math.max(arr);   // wrong 
+
+console.log(`Max is: ${Math.max(...arr)}`);
+
+// we can also pass multiple iterables in this way :
+
+let newArr = new Array();
+newArr = [54, 66, 53, 68, 80, 89, 100, 120, 125, 143];
+console.log(`Multiple Iterables, Max = ${Math.max(...arr, ...newArr)}`);    // The number that is the biggest in both arrays 
+
+let merged = [0, ...arr, 500, ...newArr];
+console.log(merged);
+console.log(Math.max(...merged));
+
+let hello = "Hello";
+// we can use the spread syntax to turn the string into array of characters 
+
+console.log([...hello]);
+let arrHello = [...hello];
+arrHello = Array.from(hello);   // we can also do this 
+console.log(arrHello);
+let final = "";
+for (let char of arrHello) final += char;
+console.log(final);
+
+
+let obj = { first: 5, second: 8, firstName: "tarokh" };
+let newObj = { ...obj };
+
+// it is also possible to copy objects using spread syntax  
+console.log(JSON.stringify(obj) === JSON.stringify(newObj));    // now this is TRUE :))
+
+
