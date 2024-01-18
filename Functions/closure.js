@@ -112,7 +112,6 @@ console.log(phrase);
  *      which is the function argument. We called say("Tarokh"), so the value of name is "Tarokh".
  *
  *      -- The outer Lexical Environment is the global Lexical Environment. It has the phrase variable and the function itself.
- *
 */
 
 // The inner Lexical Environment has a reference to the outer one.
@@ -120,4 +119,58 @@ console.log(phrase);
 
 // When the code wants to access a variable, the inner Lexical environment is searched first, then the outer one, then the more outer one and so on until the global one.
 
-// If a variable is not found anywhere, 
+// If a variable is not found anywhere, there is an error in strict mode (without "use strict", an assignment to a non-existing variable creates a new global variable,
+// for compatibility with old code).
+
+
+// 4 - RETURNING A FUNCTION
+
+function makeCounter() {
+    let count = 0;
+
+    return function () {
+        return count++;
+    };
+}
+
+let counter = makeCounter();
+
+// At the beginning of each makeCounter(), a tiny nested function is created of only one line: return counter++. We do not run it yet, only create.
+
+// a variable is updated in the lexical environment where it lives 
+
+// CLOSURE 
+
+/**
+ * 
+ *          There is a general programming term, "Closure", that developers generally should know.
+ * 
+ *          A closure is a function that remembers its outer variables and can access them. In some languages, that is not possible, or a function
+ *          should be written in a special way to make it happen. But in JavaScript all functions are naturally closures. there is only one exception
+ *          {the "new Function" syntax}.
+ * 
+ *          That is; they automatically remember where they were created using a hidden [[Environment]] property, and then their code can access outer variables.
+ *          
+ */
+
+
+function f() {
+    let value = 123;
+
+    return function () {
+        console.log(value);
+    }
+}
+
+let g = f();    // g.[[Environment]] stores a reference to the lexical environment of the corresponding f() call
+g();
+
+
+function a() {
+    let value = Math.random();
+
+    return function () { console.log(value); };
+}
+
+let arr = [a(), a(), a()];
+for (let char in arr) arr[char]();
