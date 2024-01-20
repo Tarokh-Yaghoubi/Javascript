@@ -27,7 +27,7 @@
 
 // delay:
 
-    // the delay before run, in milliseconds, 1000 ms = 1 second. by default 0.
+// the delay before run, in milliseconds, 1000 ms = 1 second. by default 0.
 
 
 // arg1, arg2:
@@ -46,7 +46,7 @@ console.log(`The identifer of firsttimeOut is : ${firstTimeOut}`);
 // with arguments 
 
 function greetUser(message, who) {
- 
+
     let str = `${message} to user ${who}`;
     console.log(str);
 
@@ -126,10 +126,10 @@ let server_timerID = setTimeout(function request() {
     // ... send request ...
 
     // if (request failed due to server overload) delay *= 2;
-    
+
     // server_timerID = setTimeout(request, delay);
 
-}, delay); 
+}, delay);
 
 
 // And if the functions that we are sheduling are CPU-hungry, then we can measure the time taken by the 
@@ -140,6 +140,25 @@ let server_timerID = setTimeout(function request() {
 // lets compare two code fragments 
 
 // the first one uses setInterval:
+
+let i = 1;
+setInterval(function () {
+    func(++i);
+}, 100);
+
+// The second one uses nested "setTimeout"
+
+let j = 1;
+setTimeout(function run() {
+    func(j++);
+    setTimeout(run, 100);
+}, 100);
+
+
+// For "setInterval" the internal sheduler will run func(i++) every 100ms
+
+// The real delay between func calls for "setInterval" is less than in the code.
+
 
 
 
