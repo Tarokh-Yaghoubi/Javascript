@@ -181,3 +181,17 @@ async function fetchFinalData() {
 
 fetchFinalData();
 
+
+const fetchArrowData = async () => {
+
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/todos/3");
+        let json = await response.json();
+        console.log(json);
+    } catch(error) {
+        console.log(error.message);
+    }
+};
+
+fetchArrowData();
+
